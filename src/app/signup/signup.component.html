@@ -1,0 +1,115 @@
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+    <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+        <img class="mx-auto h-28 w-auto" src="2.png" alt="Your Company">
+        <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign up for your account
+        </h2>
+    </div>
+
+    <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form class="space-y-6" [formGroup]="userForm" action="#" method="POST">
+            <div>
+                <label for="name" class="block text-sm font-medium leading-6 text-gray-900">First Name</label>
+                <div class="mt-2">
+                    <input id="name" name="name" type="name" autocomplete="name" formControlName="name"
+                        [class.is-invalid]="userForm.get('name')?.invalid && userForm.get('name')?.dirty"
+                        [class.is-valid]="userForm.get('name')?.valid && userForm.get('name')?.dirty"
+                        class=" ps-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+
+                <div *ngIf="userForm.get('name')?.invalid && userForm.get('name')?.dirty">
+                    <span class="text-red-500" *ngIf="userForm.get('name')?.errors?.['required']">This field must not be
+                        empty</span>
+
+                </div>
+
+            </div>
+            <div>
+                <label for="lname" class="block text-sm font-medium leading-6 text-gray-900">Last Name</label>
+                <div class="mt-2">
+                    <input id="lname" name="lname" type="lname" autocomplete="lname" formControlName="lname"
+                        [class.is-invalid]="userForm.get('lname')?.invalid && userForm.get('lname')?.dirty"
+                        [class.is-valid]="userForm.get('lname')?.valid && userForm.get('lname')?.dirty"
+                        class=" ps-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+
+                <div *ngIf="userForm.get('lname')?.invalid && userForm.get('lname')?.dirty">
+                    <span class="text-red-500" *ngIf="userForm.get('lname')?.errors?.['required']">This field must not be
+                        empty</span>
+
+                </div>
+
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">State Code (Last four digits. E.g
+                  0456 in OY/24A/0456)</label>
+                <div class="mt-2">
+                  <input id="statecode" name="statecode" type="statecode" autocomplete="statecode" formControlName="statecode"
+                    [class.is-invalid]="userForm.get('statecode')?.invalid && userForm.get('statecode')?.dirty"
+                    [class.is-valid]="userForm.get('statecode')?.valid && userForm.get('statecode')?.dirty"
+                    class=" ps-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+        
+                <div *ngIf="userForm.get('statecode')?.invalid && userForm.get('statecode')?.dirty">
+                  <span class="text-red-500" *ngIf="userForm.get('statecode')?.errors?.['required']">This field must not be
+                    empty</span>
+        
+                  <div *ngIf="statecode?.errors?.maxlength" class="text-red-500">
+                    This field cannot be more than 4 characters long.
+                  </div>
+        
+                </div>
+              </div>
+              <div>
+                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                <div class="mt-2">
+                  <input id="email" name="email" type="email" autocomplete="email" formControlName="email"
+                    [class.is-invalid]="userForm.get('email')?.invalid && userForm.get('email')?.dirty"
+                    [class.is-valid]="userForm.get('email')?.valid && userForm.get('email')?.dirty"
+                    class=" ps-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+        
+                <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.dirty">
+                  <span class="text-red-500" *ngIf="userForm.get('email')?.errors?.['required']">This field must not be
+                    empty</span>
+                  <span class="text-red-500" *ngIf="userForm.get('email')?.errors?.['email']">It must be in this format
+                    "Yourmail&#64;example.com"</span>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center justify-between">
+                  <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+                </div>
+                <div class="mt-2">
+                  <input id="password" name="password" type="password" autocomplete="current-password"
+                    formControlName="password"
+                    class=" ps-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+        
+                <div *ngIf="userForm.get('password')?.invalid && userForm.get('password')?.dirty">
+                  <span class="text-red-500" *ngIf="userForm.get('password')?.errors?.['required']">This field must not be
+                    empty</span>
+                  <div class="text-red-800" *ngIf="userForm.get('password')?.hasError?.('invalidPassword')">
+                    Password must contain at least one number and one special character.
+                  </div>
+        
+                </div>
+              </div>
+
+              <div>
+                <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid" (click)="onSubmit()"
+                  class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
+                  Up</button>
+              </div>
+           
+
+        </form>
+
+        <p class="mt-10 text-center text-sm text-gray-500">
+            Already have an account?
+            <a href="/signin" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign in</a>
+        </p>
+        <div class="text-center text-sm text-red-500">{{msg}}</div>
+
+
+    </div>
+</div>

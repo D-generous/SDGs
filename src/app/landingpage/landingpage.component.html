@@ -1,0 +1,94 @@
+<div class="min-h-screen bg-gray-50">
+
+    <header class="bg-white px-4 sm:px-6 text-black sticky top-0">
+      <div class="container mx-auto flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <img src="2remove.png" alt="Logo" class="h-24 sm:h-24 object-contain">
+          <h1 class="text-2xl sm:text-3xl font-bold">SDGs Election Portal</h1>
+        </div>
+  
+        <button class="block sm:hidden" (click)="toggleMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+  
+        <nav class="hidden sm:flex space-x-4 sm:space-x-6">
+          <ul class="flex space-x-4 sm:space-x-6">
+            <li><a href="#home" class="hover:text-green-300 transition-colors">Home</a></li>
+            <li><a href="#about" class="hover:text-green-300 transition-colors">About</a></li>
+            <li><a href="#candidates" class="hover:text-green-300 transition-colors">Candidates</a></li>
+            <li><a href="#vote" class="hover:text-yellow-300 transition-colors">Vote Now</a></li>
+          </ul>
+        </nav>
+      </div>
+  
+      <nav *ngIf="isMenuOpen" class="sm:hidden bg-indigo-800 text-white p-4">
+        <ul class="space-y-4">
+          <li><a href="#home" class=" hover:text-green-300 transition-colors">Home</a></li>
+          <li><a href="#about" class=" hover:text-green-300 transition-colors">About</a></li>
+          <li><a href="#candidates" class=" hover:text-green-300 transition-colors">Candidates</a></li>
+          <li><a href="#vote" class=" hover:text-yellow-300 transition-colors">Vote Now</a></li>
+        </ul>
+      </nav>
+    </header>
+  
+  
+  
+  
+    <section id="home" class="bg-white py-16 sm:py-20 text-center">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl sm:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">Your Vote, Your Future</h2>
+        <p class="text-md sm:text-lg text-gray-600 mb-8 sm:mb-12">Participate in the upcoming election and make your voice
+          heard.</p>
+        <a href="/signup"
+          class="bg-indigo-700 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-indigo-600">Register Now</a>
+      </div>
+    </section>
+  
+    <section id="about" class="py-12 sm:py-16 bg-gray-100">
+      <div class="container mx-auto text-center px-4">
+        <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">About the Election</h3>
+        <p class="text-sm sm:text-lg text-gray-600 max-w-xl mx-auto">
+          This election is crucial for determining the next set of leaders in our community. Your participation is vital
+          to ensure a fair and just election process. Get involved and learn about the candidates before making an
+          informed decision.
+        </p>
+      </div>
+    </section>
+  
+    <section id="candidates" class="py-12 sm:py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 text-center mb-6 sm:mb-12">Meet the Candidates</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div class="bg-gray-100 p-4 sm:p-6 rounded-lg shadow-lg text-center" *ngFor="let item of candidates">
+            <img src="{{item.profile_picture}}" alt="Candidate 1"
+              class="w-64 sm:w-64 h-64 sm:h-64 mx-auto rounded-full mb-3">
+            <h4 class="text-lg sm:text-xl font-semibold mb-2">{{item.fullname}}</h4>
+            <p class="text-gray-600 text-md sm:text-lg">{{item.statecode}}</p>
+            <a href="/" class="text-indigo-600 mt-4 block hover:underline">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section id="vote" class="py-12 sm:py-16 bg-indigo-700 text-white text-center">
+      <div class="container mx-auto px-4">
+        <h3 class="text-2xl sm:text-3xl font-bold mb-4">Ready to Vote?</h3>
+        <p class="text-sm sm:text-lg mb-6 sm:mb-8">Make sure you're registered and cast your vote on election day.</p>
+        <a href="/signin"
+          class="bg-white text-indigo-700 px-4 sm:px-6 py-2 sm:py-3 rounded-full hover:bg-indigo-600 hover:text-white">Register
+          & Vote Now</a>
+      </div>
+    </section>
+  
+    <footer class="bg-gray-800 py-8 text-white mt-auto">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 Election Portal. All Rights Reserved.</p>
+        <div class="flex justify-center space-x-4 mt-4">
+          <a href="/" class="hover:text-gray-400">Privacy Policy</a>
+          <a href="/" class="hover:text-gray-400">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </div>

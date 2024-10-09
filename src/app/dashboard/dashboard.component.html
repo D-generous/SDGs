@@ -1,0 +1,275 @@
+<div class="containe flex-1 pt-8 ps-4 pb-2 shadow-lg rounded-xl m-2">
+    <div class="text-lg font-normal">Welcome, <span class="text-2xl font-bold">{{voterName}}</span></div>
+    <marquee class="text-lg mt-2" behavior="" direction="">Your can proceed with the election here...</marquee>
+  </div>
+  <mat-stepper class="example-stepper" [orientation]="(stepperOrientation | async)!">
+    <mat-step [stepControl]="firstFormGroup" label="Vote President">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">President Ballot Box</div>
+  
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form action="" [formGroup]="firstFormGroup">
+  
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+                }
+              </mat-radio-group>
+  
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup" label="Vote Vice-President">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">Vice-President Ballot Box</div>
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form [formGroup]="secondFormGroup">
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+  
+                }
+              </mat-radio-group>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup" label="Vote Gen. Secretary">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">Gen. Secretary Ballot Box</div>
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form [formGroup]="thirdFormGroup">
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+                }
+              </mat-radio-group>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="fouthFormGroup" label="Vote Ass. Gen. Secretary">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">Ass. Gen. Secretary Ballot Box</div>
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form [formGroup]="fouthFormGroup">
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+                }
+              </mat-radio-group>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="fiveFormGroup" label="Vote Fin-Secretary">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">Fin-Secretary Ballot Box</div>
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form [formGroup]="fiveFormGroup">
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+                }
+              </mat-radio-group>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="sixFormGroup" label="Vote Electoral Officer 1">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">Electoral Officer 1 Ballot Box</div>
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form [formGroup]="sixFormGroup">
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+                }
+              </mat-radio-group>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="sevenFormGroup" label="Vote Electoral Officer 2">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">Electoral Officer 2 Ballot Box</div>
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form [formGroup]="sevenFormGroup">
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+                }
+              </mat-radio-group>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="eightFormGroup" label="Vote PR Officer">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">PR Officer Ballot Box</div>
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form [formGroup]="eightFormGroup">
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+                }
+              </mat-radio-group>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="nineFormGroup" label="Vote Project Manager">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">Project Manager Ballot Box</div>
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form [formGroup]="nineFormGroup">
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+                }
+              </mat-radio-group>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="tenFormGroup" label="Vote Welfare Officer">
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="text-2xl font-bold shadow-lg p-6">Welfare Officer Ballot Box</div>
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+  
+            <form [formGroup]="tenFormGroup">
+              <mat-radio-group aria-labelledby="example-radio-group-label"
+                class="example-radio-group grid grid-cols gap-4" formControlName="gender">
+                @for (candidate of candidates; track candidate) {
+                <mat-radio-button class="example-radio-button" [value]="candidate.candidate">{{candidate.candidate}}
+                  <span>({{candidate.statecode}})</span></mat-radio-button>
+                }
+              </mat-radio-group>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+  
+    <mat-step>
+      <div class="container border border-dotted rounded-md border-gray-600 p-6">
+        <div class="py-12 bg-gray-100 flex items-center justify-center px-4">
+          <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+            <div class="text-red-500" *ngIf="voterMsg">{{voterMsg}}</div>
+  
+  
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+            </div>
+            <div>
+              <button
+                class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                mat-button [disabled]="" (click)="onSubmit()">Submit Vote</button>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  
+  
+  <app-votesuccess *ngIf="isModalOpen" (closeModal)="closeModal()"></app-votesuccess>
